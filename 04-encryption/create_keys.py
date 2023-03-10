@@ -3,6 +3,9 @@ import rsa
 public_key, private_key = rsa.newkeys(512)
 
 public_file = open("keys/public.txt", "w")
+print(public_key)
+print(public_key.save_pkcs1())
+print(public_key.save_pkcs1().decode('utf8'))
 public_file.write(public_key.save_pkcs1().decode('utf8'))
 public_file.close()
 
